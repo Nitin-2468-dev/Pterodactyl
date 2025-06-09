@@ -9,7 +9,7 @@ x-common:
   panel:
     &panel-environment
     # This URL should be the URL that your reverse proxy routes to the panel server
-    APP_URL: "https://pterodactyl.example.com"
+    APP_URL: "https://nitin-2468.me"
     # A list of valid timezones can be found here: http://php.net/manual/en/timezones.php
     APP_TIMEZONE: "UTC"
     APP_SERVICE_AUTHOR: "noreply@example.com"
@@ -53,14 +53,12 @@ services:
     restart: always
     ports:
       - "80:80"
-      - "443:443"
     links:
       - database
       - cache
     volumes:
       - "/srv/pterodactyl/var/:/app/var/"
       - "/srv/pterodactyl/nginx/:/etc/nginx/http.d/"
-      - "/srv/pterodactyl/certs/:/etc/letsencrypt/"
       - "/srv/pterodactyl/logs/:/app/storage/logs"
     environment:
       <<: [*panel-environment, *mail-environment]
